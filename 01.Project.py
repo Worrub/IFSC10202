@@ -1,7 +1,2 @@
-years= (input("Enter Years"))
-days= (input("Enter Days"))
-hours= (input("Enter Hours"))
-minutes= (input("Enter Minutes"))
-seconds= (input("Enter Seconds"))
-Total Seconds= (seconds+(minutes*60))
-print("Total Seconds")
+input("Enter Time in Seconds: ")
+#take total seconds and math it out to years, days hours, minutes, and seconds

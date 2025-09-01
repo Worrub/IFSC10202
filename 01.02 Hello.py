@@ -1,3 +1,3 @@
-name = input("first name")
-greeting = "Hello" + name
+name = input("first name: ")
+greeting = "Hello " + name
 print(greeting)

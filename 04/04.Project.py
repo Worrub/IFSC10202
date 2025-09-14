@@ -1,5 +1,4 @@
-height = int(input("Enter Maximum Height", ))
-print("Pattern 1")
+height = int(input("Enter Maximum Height: ", ))
 for x in range (0,height):
     for y in range (x):
         print("*", end=" ")

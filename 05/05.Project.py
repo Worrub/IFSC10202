@@ -1,4 +1,9 @@
-
+start = input("Enter Start of Range: ", )
+end = input("Enter End of Range: ", )
+print("Special Numbers Inside Given Range: ")
+Special_Numbers = int(n )
+for num 
+print(Special_Numbers)
 #Create a program that displays special numbers in a range. 
 #A special number is defined to be number that is the sum of its own digits each raised to the power of the number of digits.
 #153 is 3 digits long and is equal to 1^3 + 5^3 + 3^3

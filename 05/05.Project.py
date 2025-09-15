@@ -1,9 +1,41 @@
-start = input("Enter Start of Range: ", )
-end = input("Enter End of Range: ", )
-print("Special Numbers Inside Given Range: ")
-Special_Numbers = int(n )
-for num 
-print(Special_Numbers)
+start = int(input("Enter Start of Range: ", ))
+end = int(input("Enter End of Range: ", ))
+
+def count_digits(n):
+    if n == 0:
+        return 1
+    count = 0
+    temp = n
+    while temp > 0:
+        temp //= 10
+        count += 1
+    return count
+
+def is_special_number_number(num):
+    if num < 0:
+        return False
+    if num == 0:
+        return True
+    
+    order = count_digits(num)
+    temp_num = num
+    total_sum = 0
+    
+    while temp_num > 0:
+        digit = temp_num % 10
+        total_sum += digit ** order
+        temp_num //= 10
+        
+    return total_sum == num
+
+def find_special_number_in_range(start, end):
+    print(f"Special Numbers between {start} and {end}:")
+    for number in range(start, end + 1):
+        if is_special_number_number(number):
+            print(number)
+
+find_special_number_in_range (start, end)
+
 #Create a program that displays special numbers in a range. 
 #A special number is defined to be number that is the sum of its own digits each raised to the power of the number of digits.
 #153 is 3 digits long and is equal to 1^3 + 5^3 + 3^3

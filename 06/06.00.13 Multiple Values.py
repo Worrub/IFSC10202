@@ -1,5 +1,5 @@
 # It is often useful for a function to return more than one value. 
-# Here's the example of returning two or more values: return a, b
+# +Here's the example of returning two or more values: return a, b
 
 def addth(m,n):
 # Add 'th' to end of word

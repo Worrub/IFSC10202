@@ -7,8 +7,8 @@
 # To correct this problem, change print(a) to print(b).
 
 def myFunction():
-	a = "A is a local variable"
-	return a
+    a = "A is a local variable"
+    return a
 	
 b = myFunction()
-print(a)
+print(b)

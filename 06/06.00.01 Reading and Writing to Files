@@ -10,3 +10,27 @@ In addition you can specify if the file should be handled as binary or text mode
 
 "t" - Text - Default value. File has letters and numbers; each line terminated with a linefeed
 "b" - Binary - Binary mode (e.g. images). File has unprintable characters, such as photos videos, and sound files.
+
+print("line1\nline2\n\nline4")
+
+The open() Statement
+Before you can access a file, you must open it by name using the open() statement. If you open "06.00.00 DemoText.txt", it is assumed that the file is in the root of the file system. If the file is in a folder, say "IFSC1202", then you would specify "IFSC1202/06.00.00 DemoText.txt".
+
+demofile = open("06.00.00 DemoText.txt")
+The code above is the same as:
+
+demofile = open("06.00.00 DemoText.txt", "rt")
+Because "r" for read, and "t" for text are the default values, you do not need to specify them. Note: Make sure the file exists, or else you will get an error.
+
+The .read() method
+The .read() method is used to read an entire file. The all lines of the contents (including any linefeeds) are placed in a string.
+
+x = demotextfile.read()
+Displaying the File Contents
+You can display the contents of the file by simply printing it. Note: what happens when a linefeed is printed...output is advanced to the beginning of the new line.
+
+print(x)
+Closing the File
+When you are finished with the file, you should use the .close() method to close the file to release all of the resources associated with the file.
+
+demotextfile.close()

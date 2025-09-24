@@ -12,26 +12,27 @@
 inputfilename = "06/06.Project Input File.txt"
 mergefilename = "06/06.Project Merge File.txt"
 outputfilename = "06/06.Project Output File.txt"
+
 recordcount = 0
+
 inputfile = open(inputfilename, 'r')
 mergefile = open(mergefilename, 'r')
 outputfile = open(outputfilename, 'w')  
 # Read the first line of the input file
 line = inputfile.readline()
 line = mergefile.readline()
-line_number_to_replace = 2  # For example, to replace the 3rd line
+
 
 while line != '':
     
-# Write to the output file
-# Note that line already contains a linefeed character,
-# so we don't have to add one when we write it.
      outputfile.write(line)
      recordcount += 1
-# Read the next line of the input file
      line = inputfile.readline()
-# End of File on input file
-# Close both files
+
+with open("06/06.Project Output File.txt", "w") as f:
+    f.write("Line 1 in target\nLine 2")
+("06/06.Project Merge File.txt", "06/06.Project Output File.txt", 3, "This is the NEW line 2 content.\n")
+
 inputfile.close()
 mergefile.close()
 outputfile.close()

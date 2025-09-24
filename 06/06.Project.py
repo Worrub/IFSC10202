@@ -19,7 +19,10 @@ outputfile = open(outputfilename, 'w')
 # Read the first line of the input file
 line = inputfile.readline()
 line = mergefile.readline()
+line_number_to_replace = 2  # For example, to replace the 3rd line
+
 while line != '':
+    
 # Write to the output file
 # Note that line already contains a linefeed character,
 # so we don't have to add one when we write it.

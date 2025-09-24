@@ -1,5 +1,5 @@
 # Open a file for reading
-demotextfile = open("06.00.00 DemoText.txt")
+demotextfile = open("06/06.00.00 DemoText.txt")
 # Read the first line of the file
 x = demotextfile.readline()
 # End of file is indicated when the input is empty

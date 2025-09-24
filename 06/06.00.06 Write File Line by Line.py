@@ -1,5 +1,5 @@
 # Open the file for writing
-newfile = open("06.00.00 OutputText.txt", "w")
+newfile = open("06/06.00.00 OutputText.txt", "w")
 # Output 10 numbers
 for i in range(1,11):
 # Note output does not contain a linefeed character,

@@ -22,7 +22,6 @@ outputfile = open(outputfilename, 'w')
 line = inputfile.readline()
 line = mergefile.readline()
 
-
 while line != '':
     
      outputfile.write(line)
@@ -30,8 +29,8 @@ while line != '':
      line = inputfile.readline()
 
 with open("06/06.Project Output File.txt", "w") as f:
-    f.write("Line 1 in target\nLine 2")
-("06/06.Project Merge File.txt", "06/06.Project Output File.txt", 3, "This is the NEW line 2 content.\n")
+    f.write("Line 1 \nLine 2")
+("06/06.Project Merge File.txt", "06/06.Project Output File.txt")
 
 inputfile.close()
 mergefile.close()

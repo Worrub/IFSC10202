@@ -1,65 +1,40 @@
-#Fix code only overwriting line 1 of input and only with line 1 of merge into output
-#Whelp there goes all my GD'ed progress
-inputfilename = "06/06.Project Input File.txt"
-mergefilename = "06/06.Project Merge File.txt"
-outputfilename = "06/06.Project Output File.txt"
+# File paths
+input_file_path = "06/06.Project Input File.txt"
+merge_file_path = "06/06.Project Merge File.txt"
+output_file_path = "06/06.Project Output File.txt"
 
-recordcount = 0
+# Initialize record counters
+input_records = 0
+merge_records = 0
+output_records = 0
 
-inputfile = open(inputfilename, 'r')
-line = inputfile.readline()
-with open(inputfilename, 'r') as file:
-    content = file.read()
-    lines = content.splitlines(1)
-with open(inputfilename, 'r') as file:
-    content = file.read()
-    lines = content.splitlines(2)
-with open(inputfilename, 'r') as file:
-    content = file.read()
-    lines = content.splitlines(3)
-with open(inputfilename, 'r') as file:
-    content = file.read()
-    lines = content.splitlines(4)
-with open(inputfilename, 'r') as file:
-    content = file.read()
-    lines = content.splitlines(5)
+# Open files
+with open(input_file_path, 'r') as input_file, open(merge_file_path, 'r') as merge_file, open(output_file_path, 'w') as output_file:
+    # Read and process the input file
+    for line in input_file:
+        input_records += 1  # Increment input record count
+        if '**Insert Merge File Here**' in line:
+            # Write the part of the line before the placeholder to output
+            output_file.write(line.split('**Insert Merge File Here**')[0])
+            output_records += 1
 
-mergefile = open(mergefilename, 'r')
-line = mergefile.readline()
-with open(mergefilename, 'r') as file:
-    content = file.read()
-    lines = content.splitlines(1)
-with open(mergefilename, 'r') as file:
-    content = file.read()
-    lines = content.splitlines(2)           
+            # Copy the contents of the merge file
+            merge_file.seek(0)  # Move to the start of the merge file
+            for merge_line in merge_file:
+                output_file.write(merge_line)
+                merge_records += 1  # Increment merge record count
+                output_records += 1  # Increment output record count
+            
+            # Write the part of the line after the placeholder, if any
+            if line.split('**Insert Merge File Here**')[1]:
+                output_file.write(line.split('**Insert Merge File Here**')[1])
+                output_records += 1
 
-outputfile = open(outputfilename, 'w')
-for line in inputfile:1
-outputfile.write(line)
-for line in inputfile:2
-outputfile.write(line)
+        else:
+            output_file.write(line)
+            output_records += 1  # Increment output record count
 
-for line in mergefile:1
-outputfile.write(line)
-for line in mergefile:2
-outputfile.write(line)
-
-for line in inputfile:4
-outputfile.write(line)
-for line in inputfile:5
-outputfile.write(line)
-
-while line != '':
-    
-     outputfile.write(line)
-     recordcount += 1
-     line = inputfile.readline()
-
-with open ("06/06.Project Output File.txt", "w") as f:
-    f.write("Line 1\nLine 2")
-    ("06/06.Project Merge File.txt", "06/06.Project Output File.txt")
-
-inputfile.close()
-mergefile.close()
-outputfile.close()
-print("{} records written".format(recordcount))
+# Print the results
+print(f"Input file records: {input_records}")
+print(f"Merge file records: {merge_records}")
+print(f"Output file records: {output_records}")

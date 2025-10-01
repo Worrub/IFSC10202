@@ -16,11 +16,21 @@ outputfilename = "06/06.Project Output File.txt"
 recordcount = 0
 
 inputfile = open(inputfilename, 'r')
-mergefile = open(mergefilename, 'r')
-outputfile = open(outputfilename, 'w')  
-# Read the first line of the input file
 line = inputfile.readline()
+
+mergefile = open(mergefilename, 'r')
 line = mergefile.readline()
+
+outputfile = open(outputfilename, 'w')
+for line in inputfile:1
+for line in inputfile:2
+for line in inputfile:3
+
+for line in mergefile:1
+for line in mergefile:2
+
+for line in inputfile:4
+for line in inputfile:5
 
 while line != '':
     
@@ -28,9 +38,10 @@ while line != '':
      recordcount += 1
      line = inputfile.readline()
 
-with open("06/06.Project Output File.txt", "w") as f:
-    f.write("Line 1 \nLine 2")
-("06/06.Project Merge File.txt", "06/06.Project Output File.txt")
+with open ("06/06.Project Output File.txt", "w") as f:
+    f.write("Line 1\nLine 2")
+    ("06/06.Project Merge File.txt", "06/06.Project Output File.txt")
+
 
 inputfile.close()
 mergefile.close()
